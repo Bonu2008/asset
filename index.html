@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'poppins', sans-serif;
+                display: flex;
+                justify-content: center;
+                background-color: #eeeeee;
+            }
+
+            .container {
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                width: 210px;
+                height: 60px;
+                background-color: #555555;
+                color: yellow;
+                border-radius: 7px;
+                box-shadow: 3px 3px 2px #000000;
+            }
+
+            .hours, .minutes, .seconds {
+                font-size: 25px;
+                font-weight: bold;
+                bottom: 1px solid yellow;
+                background-color: #333333;
+                box-shadow: 3px 3px 2px #000000;
+                border-radius: 5px;
+                padding: 1px 5px;
+            }
+
+            .dots {
+                color: white;
+                font-weight: bold;
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+
+    <div class="container">
+        <span class="hours" id="hour">00</span>
+        <span class="dots"><p>:</p></span>
+        <span class="minutes" id="minutes">00</span>
+        <span class="dots"><p>:</p></span>
+        <span class="seconds" id="seconds">00</span>
+    </div>
+
+    <script>
+        function showTime() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+
+            document.getElementById("hour").
+            innerHTML=hours;
+            document.getElementById("minutes").
+            innerHTML=minutes;
+            document.getElementById("seconds").
+            innerHTML=seconds;
+
+        }
+
+        setInterval(showTime, 10)
+    </script>
+
+    </body>
+    </html>
